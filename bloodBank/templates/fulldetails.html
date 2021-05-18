@@ -1,0 +1,393 @@
+
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Full Details</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+</head>
+<style>
+  .hero{
+    background: rgb(255,255,255);
+    background: linear-gradient(0deg, rgba(255,255,255,1) 5%, rgba(228,251,255,1) 100%);
+  }
+  .det{
+    border-radius: 1.5rem;
+    -webkit-box-shadow: 3px -8px 25px 12px rgba(208, 247, 254, 0.93);
+    -moz-box-shadow: 3px -8px 25px 12px rgba(208, 247, 254, 0.93);
+    box-shadow: 3px -8px 25px 12px rgba(208, 247, 254, 0.93);
+  }
+  .msg_btn{
+    animation: bounce 0.5s infinite alternate;
+    -webkit-animation: bounce 0.5s infinite alternate;
+
+  }
+  @keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+@-webkit-keyframes bounce {
+  from {
+    transform: translateY(0px);
+  }
+  to {
+    transform: translateY(-20px);
+  }
+}
+</style>
+<body>
+    <!-- hero start -->
+    <div class="px-4 py-3  text-center hero">
+
+        <img class="d-block mx-auto mb-2" src="https://img.icons8.com/ios/64/000000/oil-massage.png"/>
+        <h4 style="font-size: calc(.65rem + 1.1vw);" class="display-5 fw-bold">Help to save a <strong style="color: #9ab3f5;">Life</strong>  : Donate blood<img
+            style="margin-left: 0 rem"
+            src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+          /></h4>
+        <div class="col-lg-6 mx-auto">
+          <p class="lead mb-4"></p>
+          <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+
+            <div class="d-grid gap-2 col-8 mx-auto">
+
+              <button
+              class="btn btn-info"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+            >
+              Features
+              <img src="https://img.icons8.com/nolan/24/heart-health.png" />
+            </button>
+            </div>
+
+
+          </div>
+        </div>
+      </div>
+      <!-- hero end -->
+      <!-- Sidebar start -->
+    <div
+    class="offcanvas offcanvas-start"
+    tabindex="-1"
+    id="offcanvasExample"
+    aria-labelledby="offcanvasExampleLabel"
+  >
+    <div class="offcanvas-header">
+      <img src="https://img.icons8.com/cotton/64/000000/--bloodbag.png" />
+      <h5 class="offcanvas-title" id="offcanvasExampleLabel">Blood Bank</h5>
+
+      <button
+        type="button"
+        class="btn-close text-reset"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      ></button>
+    </div>
+    <div class="offcanvas-body">
+      <div>
+        <div class="accordion accordion-flush" id="accordionFlushExample">
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingOne">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseOne"
+                aria-expanded="false"
+                aria-controls="flush-collapseOne"
+              >
+                Navigation
+                <img
+                  style="margin-left: 1rem"
+                  src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                />
+              </button>
+            </h2>
+            <div
+              id="flush-collapseOne"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingOne"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                <ul class="nav nav-pills flex-column mb-auto">
+                  <li class="nav-item">
+                    <a href="{% url 'home' %}" class="nav-link active" aria-current="page">
+                      <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#home"></use>
+                      </svg>
+                      Home
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="{% url 'donors_list' %}" class="nav-link link-dark ">
+                      <svg class="bi me-2" width="16" height="16">
+                        <use xlink:href="#table"></use>
+                      </svg>
+                     Donors List
+                    </a>
+                  </li>
+
+
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingTwo">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseTwo"
+                aria-expanded="false"
+                aria-controls="flush-collapseTwo"
+              >
+                Blood Bank
+                <img
+                  style="margin-left: 1rem"
+                  src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                /><img
+                  src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                />
+              </button>
+            </h2>
+            <div
+              id="flush-collapseTwo"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingTwo"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Donate Blood Through Our WEBSITE And Help Others, We'll
+                Connect You with the people in need
+                <a style="margin-left: 1rem" class="nav_link" href="">
+                  Explore >>></a
+                >
+              </div>
+            </div>
+          </div>
+          <div class="accordion-item">
+            <h2 class="accordion-header" id="flush-headingThree">
+              <button
+                class="accordion-button collapsed"
+                type="button"
+                data-bs-toggle="collapse"
+                data-bs-target="#flush-collapseThree"
+                aria-expanded="false"
+                aria-controls="flush-collapseThree"
+              >
+                Donors
+                <img
+                  style="margin-left: 1rem"
+                  src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                /><img
+                  src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                /><img
+                  src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                />
+              </button>
+            </h2>
+            <div
+              id="flush-collapseThree"
+              class="accordion-collapse collapse"
+              aria-labelledby="flush-headingThree"
+              data-bs-parent="#accordionFlushExample"
+            >
+              <div class="accordion-body">
+                Placeholder content for this accordion, which is intended to
+                demonstrate the
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="container mt-5">
+        <img
+          style="width: 95%; height: 50%"
+          src="{% static 'marginalia-679.png' %}"
+          alt=""
+        />
+      </div>
+
+      <br>
+
+
+      <div class="container">
+        {% if request.user.is_authenticated %}
+        <div style="margin-top: calc(12vh - 30px)" class="dropdown">
+          <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+
+
+
+            <img src="https://img.icons8.com/cute-clipart/50/000000/user-male-circle.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <strong>{{request.user.username}}</strong>
+          </a>
+          <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
+            <li><a class="dropdown-item" href="#">New project...</a></li>
+            <li><a class="dropdown-item" href="#">Settings</a></li>
+            <li><a class="dropdown-item" href="{% url 'profile' request.user.pk %}">Profile</a></li>
+            <li><hr class="dropdown-divider"></li>
+            <li><a class="dropdown-item" href="#">Sign out</a></li>
+          </ul>
+        </div>
+        {% else %}
+        <br>
+        <br>
+        <button class="btn btn-outline-primary btn-sm" onclick="return show_()" data-bs-dismiss="offcanvas"
+        aria-label="Close">Register</button>
+        {% endif %}
+
+      </div>
+
+
+
+    </div>
+  </div>
+  <!-- sidebar end -->
+
+  <!-- details start -->
+
+
+  <div class="container mt-3 mb-5">
+    <center class="msg_btn"><a id="msg_btn" class="msg_btn_link" href="#" onclick="return change_state()"><img src="https://img.icons8.com/fluent/58/000000/envelope-dots.png"/></a></center>
+
+  </div>
+  <!-- message -->
+  <div class="container d-flex justify-content-center">
+
+      <div style="display: none; width: 50%;" id="div1" class="p-5 my-3 mb-4 bg-light det ">
+
+
+
+        <center><img style="margin-bottom: 1rem;" src="https://img.icons8.com/fluent/28/000000/circled-envelope.png"/></center>
+
+
+            <div class="alert alert-success" role="alert">
+              <h4 class="alert-heading">Hey!</h4>
+              <p>Your Request has Been Sent To The Donor, He'll Try To Contact You If He Sees The Email.</p>
+              <hr>
+              <p class="mb-0">But You Should Try To Reach Him Through Email, Phone Or Through Our Chat System</p>
+            </div>
+            <center><button type="button" onclick="return cls_btn()" class="btn-close mt-2" aria-label="Close"></button></center>
+
+
+
+      </div>
+
+  </div>
+
+  <div class="container d-flex justify-content-center">
+
+    <div style="width: 70%;" id="div2" class="my-3 mb-4 bg-light det">
+      <div class="px-4 py-5 my-5 text-center">
+        {% if fulldet.blood_group == 'A+' %}
+        <img class="d-block mx-auto mb-4" src="{% static  'A+.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'B+' %}
+        <img class="d-block mx-auto mb-4" src="{% static  'B+.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'O+' %}
+        <img class="d-block mx-auto mb-4" src="{% static  'o+.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'A-' %}
+        <img class="d-block mx-auto mb-4" src="{% static  'A-.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'B-' %}
+        <img class="d-block mx-auto mb-4" src="{% static  'B-.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'O-' %}
+        <img class="d-block mx-auto mb-4" src="{% static  'o-.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'AB+' %}
+          <img class="d-block mx-auto mb-4" src="{% static  'AB+.jpg' %}" alt="" width="72" height="67">
+          {% elif fulldet.blood_group == 'AB-' %}
+          <img class="d-block mx-auto mb-4" src="{% static  'AB-.jpg' %}" alt="" width="72" height="67">
+        {% endif %}
+
+        <h4 style="font-size: 1.5rem;" class="display-5 fw-bold"><small style="font-weight: 500;">Name :  </small> {{fulldet.name}}</h4>
+
+
+        <div class="alert alert-primary d-flex align-items-center" role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-envelope" viewBox="0 0 16 16">
+            <path d="M0 4a2 2 0 0 1 2-2h12a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2H2a2 2 0 0 1-2-2V4zm2-1a1 1 0 0 0-1 1v.217l7 4.2 7-4.2V4a1 1 0 0 0-1-1H2zm13 2.383-4.758 2.855L15 11.114v-5.73zm-.034 6.878L9.271 8.82 8 9.583 6.728 8.82l-5.694 3.44A1 1 0 0 0 2 13h12a1 1 0 0 0 .966-.739zM1 11.114l4.758-2.876L1 5.383v5.73z"/>
+          </svg>
+          <div style="margin-left: 1rem;">
+            Email :
+            <a href="mailto:{{fulldet.email}}">{{fulldet.email}}</a>
+          </div>
+        </div>
+        <div class="alert alert-success d-flex align-items-center" role="alert">
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="currentColor" class="bi bi-telephone-fill" viewBox="0 0 16 16">
+            <path fill-rule="evenodd" d="M1.885.511a1.745 1.745 0 0 1 2.61.163L6.29 2.98c.329.423.445.974.315 1.494l-.547 2.19a.678.678 0 0 0 .178.643l2.457 2.457a.678.678 0 0 0 .644.178l2.189-.547a1.745 1.745 0 0 1 1.494.315l2.306 1.794c.829.645.905 1.87.163 2.611l-1.034 1.034c-.74.74-1.846 1.065-2.877.702a18.634 18.634 0 0 1-7.01-4.42 18.634 18.634 0 0 1-4.42-7.009c-.362-1.03-.037-2.137.703-2.877L1.885.511z"/>
+          </svg>
+          <div style="margin-left: 1rem;">
+            Phone No:
+            <a href="tel:+91{{fulldet.phone_no}}">{{fulldet.phone_no}}</a>
+          </div>
+        </div>
+        <div class="alert alert-warning d-flex align-items-center" role="alert">
+          <img src="https://img.icons8.com/ios-filled/29/000000/address--v1.png"/>
+          <div style="margin-left: 1rem;">
+
+           Address:  {{fulldet.address}}
+          </div>
+        </div>
+        <div class="alert alert-danger d-flex align-items-center" role="alert">
+          <img src="https://img.icons8.com/pastel-glyph/30/000000/stethoscope.png"/>
+          <div style="margin-left: 1rem;">
+            Decease:  {{fulldet.decease}}
+          </div>
+        </div>
+        <div class="alert alert-info d-flex align-items-center" role="alert">
+          <img src="https://img.icons8.com/material-rounded/30/000000/clock.png"/>
+          <div style="margin-left: 1rem;">
+            Time:  {{fulldet.time}}
+          </div>
+        </div>
+        <div class="container">
+          <br>
+          <strong>You Need To Login Before Chating With The Donor</strong>
+          <br>
+          <center>
+            <a href="{% url 'talk' fulldet.user %}" type="button" class="btn btn-outline-info">Message <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-chat-square-text" viewBox="0 0 16 16">
+              <path d="M14 1a1 1 0 0 1 1 1v8a1 1 0 0 1-1 1h-2.5a2 2 0 0 0-1.6.8L8 14.333 6.1 11.8a2 2 0 0 0-1.6-.8H2a1 1 0 0 1-1-1V2a1 1 0 0 1 1-1h12zM2 0a2 2 0 0 0-2 2v8a2 2 0 0 0 2 2h2.5a1 1 0 0 1 .8.4l1.9 2.533a1 1 0 0 0 1.6 0l1.9-2.533a1 1 0 0 1 .8-.4H14a2 2 0 0 0 2-2V2a2 2 0 0 0-2-2H2z"/>
+              <path d="M3 3.5a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9a.5.5 0 0 1-.5-.5zM3 6a.5.5 0 0 1 .5-.5h9a.5.5 0 0 1 0 1h-9A.5.5 0 0 1 3 6zm0 2.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5z"/>
+            </svg></a>
+
+          </center>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+
+  <!-- details end -->
+      <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script>
+      function change_state(){
+        document.getElementById('div1').style.display ='block';
+        document.getElementById('msg_btn').style.display='none'
+
+      }
+      function cls_btn(){
+        document.getElementById('div1').style.display ='none';
+        document.getElementById('msg_btn').style.display='block'
+      }
+    </script>
+</body>
+</html>

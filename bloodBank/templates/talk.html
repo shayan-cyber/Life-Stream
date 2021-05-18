@@ -1,0 +1,416 @@
+
+{% load humanize %}
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chat</title>
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-wEmeIV1mKuiNpC+IOBjI7aAzPcEZeedi5yW5f2yOq55WWLwNGmvvx4Um1vskeMj0"
+      crossorigin="anonymous"
+    />
+</head>
+<body>
+
+    <nav class="navbar fixed-top navbar-light bg-light">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="#">
+
+
+            <img width="30" height="24" class="d-inline-block align-text-top" src="https://img.icons8.com/cute-clipart/64/000000/user-male-circle.png"/>
+            {{userchat}}
+          </a>
+
+
+            <div class="d-grid gap-2 col-4 mx-auto">
+
+              <button
+              class="btn btn-info"
+              type="button"
+              data-bs-toggle="offcanvas"
+              data-bs-target="#offcanvasExample"
+              aria-controls="offcanvasExample"
+            >
+              Features
+              <img src="https://img.icons8.com/nolan/24/heart-health.png" />
+            </button>
+            </div>
+
+
+        </div>
+    </nav>
+
+
+    <!-- Sidebar start -->
+    <div
+      class="offcanvas offcanvas-start"
+      tabindex="-1"
+      id="offcanvasExample"
+      aria-labelledby="offcanvasExampleLabel"
+    >
+      <div class="offcanvas-header">
+        <img src="https://img.icons8.com/cotton/64/000000/--bloodbag.png" />
+        <h5 class="offcanvas-title" id="offcanvasExampleLabel">Blood Bank</h5>
+
+        <button
+          type="button"
+          class="btn-close text-reset"
+          data-bs-dismiss="offcanvas"
+          aria-label="Close"
+        ></button>
+      </div>
+      <div class="offcanvas-body">
+        <div>
+          <div class="accordion accordion-flush" id="accordionFlushExample">
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingOne">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseOne"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseOne"
+                >
+                  Navigation
+                  <img
+                    style="margin-left: 1rem"
+                    src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                  />
+                </button>
+              </h2>
+              <div
+                id="flush-collapseOne"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingOne"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  <ul class="nav nav-pills flex-column mb-auto">
+                    <li class="nav-item">
+                      <a href="{% url 'home' %}" class="nav-link active" aria-current="page">
+                        <svg class="bi me-2" width="16" height="16">
+                          <use xlink:href="#home"></use>
+                        </svg>
+                        Home
+                      </a>
+                    </li>
+
+                    <li>
+                      <a href="{% url 'donors_list' %}" class="nav-link link-dark">
+                        <svg class="bi me-2" width="16" height="16">
+                          <use xlink:href="#table"></use>
+                        </svg>
+                        Donors List
+                      </a>
+                    </li>
+
+                  </ul>
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingTwo">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseTwo"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseTwo"
+                >
+                  Blood Bank
+                  <img
+                    style="margin-left: 1rem"
+                    src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                  /><img
+                    src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                  />
+                </button>
+              </h2>
+              <div
+                id="flush-collapseTwo"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingTwo"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Donate Blood Through Our WEBSITE And Help Others, We'll
+                  Connect You with the people in need
+                  <a style="margin-left: 1rem" class="nav_link" href="">
+                    Explore >>></a
+                  >
+                </div>
+              </div>
+            </div>
+            <div class="accordion-item">
+              <h2 class="accordion-header" id="flush-headingThree">
+                <button
+                  class="accordion-button collapsed"
+                  type="button"
+                  data-bs-toggle="collapse"
+                  data-bs-target="#flush-collapseThree"
+                  aria-expanded="false"
+                  aria-controls="flush-collapseThree"
+                >
+                  Donors
+                  <img
+                    style="margin-left: 1rem"
+                    src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                  /><img
+                    src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                  /><img
+                    src="https://img.icons8.com/doodle/32/000000/drop-of-blood.png"
+                  />
+                </button>
+              </h2>
+              <div
+                id="flush-collapseThree"
+                class="accordion-collapse collapse"
+                aria-labelledby="flush-headingThree"
+                data-bs-parent="#accordionFlushExample"
+              >
+                <div class="accordion-body">
+                  Placeholder content for this accordion, which is intended to
+                  demonstrate the
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container mt-5">
+          <img
+            style="width: 95%; height: 50%"
+            src="{% static 'marginalia-679.png' %}"
+            alt=""
+          />
+        </div>
+
+        <br>
+        <div class="container">
+          <div style="margin-top: calc(12vh - 30px)" class="dropdown">
+            <a href="#" class="d-flex align-items-center link-dark text-decoration-none dropdown-toggle" id="dropdownUser2" data-bs-toggle="dropdown" aria-expanded="false">
+
+
+
+              <img src="https://img.icons8.com/cute-clipart/50/000000/user-male-circle.png" alt="" width="32" height="32" class="rounded-circle me-2">
+              <strong>{{request.user.username}}</strong>
+            </a>
+            <ul class="dropdown-menu text-small shadow" aria-labelledby="dropdownUser2" style="">
+              <li><a class="dropdown-item" href="#">New project...</a></li>
+              <li><a class="dropdown-item" href="#">Settings</a></li>
+              <li><a class="dropdown-item" href="{% url 'profile' request.user.pk %}">Profile</a></li>
+              <li><hr class="dropdown-divider"></li>
+              <li><a class="dropdown-item" href="#">Sign out</a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <!-- sidebar end -->
+
+    <div style="padding-bottom: 30vh; margin-top: 20vh;  overflow:hidden;display: flex;
+    flex-direction: column-reverse; " id="chatcontent" class="conatiner">
+
+        {% for msg in msgs  %}
+
+
+
+        {% if msg.text|length > 0 %}
+        {% if msg.chatter == request.user.username %}
+        <div style="width: 50vw;
+            margin-top: 1em;
+            border-radius: 15px 15px 15px 15px;
+            margin-left: 49vw;    " class="alert alert-success"
+            role="alert">
+            {% else %}
+            <div style="width: 50vw;
+            margin-top: 1em;
+            border-radius: 15px 15px 15px 15px;
+            margin-right: 49vw;" class="alert
+            alert-primary" role="alert">
+
+            {% endif %}
+
+
+           <p style="word-wrap: break-word; font-weight: bold;"> {{msg.text}} <small class="text-muted"> {{msg.time|naturaltime}}</small> </p>
+
+
+        </div>
+        {% endif %}
+
+        {% endfor %}
+
+
+
+
+
+
+
+
+
+
+    </div>
+
+
+    <nav style="border-radius: 10px 10px 0px 0px;
+    -moz-border-radius: 10px 10px 0px 0px;
+    -webkit-border-radius: 10px 10px 0px 0px;
+    border: 0.5px solid #d0f7fe; height: 4em;  " class="navbar
+    fixed-bottom
+    navbar-light
+    bg-light">
+    <div class="navbar-nav mr-auto">
+
+    </div>
+
+    <div style="margin-top: -1em;" class="navbar-nav mx-auto">
+        <form method="POST" id ="chat" action="{% url 'talk' user %}" class="form-inline my-2 my-lg-0">
+            {% csrf_token %}
+            <div class="row">
+
+
+                <div class="col-md-2">
+
+                </div>
+
+                <div class="col-md-8">
+
+                    <input style="width: auto; min-width: 25vw; margin-right: 3rem;"
+                class="form-control mr-sm-2" type="text" name="messages1"
+                placeholder="Type..." aria-label="Search" autocomplete="off">
+                <input
+                class="form-control mr-sm-2" type="hidden" name="chatter"
+                value="{{request.user.username}}"
+                 >
+                </div>
+                <div class="col-md-1">
+
+                    <button style="width:2.5rem; margin-left:0.1rem;" class="navbar-brand btn
+                btn-outline-primary btn-sm my-2 my-sm-0"
+                type="submit"><svg width="1em" height="1em"
+                    viewBox="0 0
+                    16 16" class="bi bi-chat-square-quote-fill"
+                    fill="currentColor"
+                    xmlns="http://www.w3.org/2000/svg">
+                    <path fill-rule="evenodd" d="M0 2a2 2 0 0 1
+                        2-2h12a2
+                        2 0 0 1 2 2v8a2 2 0 0 1-2 2h-2.5a1 1 0 0
+                        0-.8.4l-1.9 2.533a1 1 0 0 1-1.6 0L5.3 12.4a1
+                        1 0
+                        0 0-.8-.4H2a2 2 0 0 1-2-2V2zm7.194
+                        2.766c.087.124.163.26.227.401.428.948.393
+                        2.377-.942 3.706a.446.446 0 0
+                        1-.612.01.405.405
+                        0 0
+                        1-.011-.59c.419-.416.672-.831.809-1.22-.269.165-.588.26-.93.26C4.775
+                        7.333 4 6.587 4 5.667 4 4.747 4.776 4 5.734
+                        4c.271 0
+                        .528.06.756.166l.008.004c.169.07.327.182.469.324.085.083.161.174.227.272zM11
+                        7.073c-.269.165-.588.26-.93.26-.958
+                        0-1.735-.746-1.735-1.666 0-.92.777-1.667
+                        1.734-1.667.271 0
+                        .528.06.756.166l.008.004c.17.07.327.182.469.324.085.083.161.174.227.272.087.124.164.26.228.401.428.948.392
+                        2.377-.942 3.706a.446.446 0 0
+                        1-.613.01.405.405
+                        0 0 1-.011-.59c.42-.416.672-.831.81-1.22z"
+                        />
+                    </svg></button>
+                </div>
+                <div class="col-md-1">
+
+                </div>
+            </div>
+
+
+            </form>
+
+        </div>
+
+
+
+        <div class="navbar-nav ml-auto">
+
+        </div>
+
+
+    </nav>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-p34f1UUtsS3wqzfto5wAAmdvj+osOnFyQFpp4Ua3gs/ZVWx6oOypYoCJhGGScy+8"
+      crossorigin="anonymous"
+    ></script>
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"
+        integrity="sha384-9/reFTGAW83EW2RDu2S0VKaIzap3H66lZH81PoYlFhbGU+6BZp6G7niu735Sk7lN"
+        crossorigin="anonymous"></script>
+    <script
+        src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+        integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+        crossorigin="anonymous"></script>
+
+
+
+
+
+            <script type="text/javascript">
+                $(document).ready(function() {
+                    $('#chat').submit(function() {
+                        var out = document.getElementById("chatcontent"); // On form submit event
+                        $.ajax({ // create an AJAX call...
+                            data: $(this).serialize(), // get the form data
+                            type: $(this).attr('method'), // GET or POST
+                            url: $(this).attr('action'), // the file to call
+                            success: function(response) { // on success..
+                                console.log('success')
+                               $('body').load('{% url 'talk' userchat  %}');
+                               $('#everything').html(response);
+
+
+
+                               // window.scrollTo(0,document.querySelector('#chatcontent').scrollHeight-30);
+                            },
+                            error: function(e, x, r) { // on error..
+                                console.log('error');
+                                $('body').load('{% url 'talk' userchat  %}'); // update the DIV
+                            }
+
+                        });
+                        return false;
+                    });
+                });
+                </script>
+                <script>
+                    function alertFunc() {
+                        $('#chatcontent').load('{% url 'talk' userchat  %}');
+                        //console.log('refresh');
+
+
+                      //Make sure message list is scrolled to the bottom
+                     // var objDiv = document.body;
+                     //objDiv.scrollTop = objDiv.scrollHeight;
+
+
+
+
+                     }
+                     setTimeout(alertFunc, 4000);
+
+
+
+
+
+
+                     window.onload = function(){
+              window.scrollTo(0, document.getElementById('chatcontent').scrollHeight);
+                  }
+                </script>
+</body>
+</html>
